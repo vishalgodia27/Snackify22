@@ -27,8 +27,23 @@
     padding-bottom: 2px ;
     border-bottom: 2px solid#49557e;
 }
-.navbar{
+/* Only show pointer on interactive children, not the whole bar */
+.navbar a,
+.navbar button,
+.navbar .navbar-menu a {
     cursor: pointer;
+}
+
+/* Tap-friendly links in the menu */
+.navbar-menu a{
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    -webkit-tap-highlight-color: transparent;
 }
 .navbar-search-icon .dot{
     position: absolute;
@@ -39,6 +54,8 @@
     top: -8px;
     right: -8px;
 }
+/* Ensure badge positions relative to the icon wrapper */
+.navbar-search-icon{ position: relative; }
 @media(max-width:1050px){
     .navbar .logo{
         width: 140px;
@@ -48,12 +65,7 @@
         gap:30px;
         font-size: 17px;
     }
-    .navbar_right {
-        gap:30px
-    }
-    .navbar_right{
-        width: 22px;
-    }
+    .navbar_right { gap:30px; width: auto; }
     .navbar_right button{
         padding: 8px 25px;
     }
@@ -67,12 +79,7 @@
         gap:15px;
         font-size: 17px;
     }
-    .navbar_right {
-        gap:20px
-    }
-    .navbar_right{
-        width: 20px;
-    }
+    .navbar_right { gap:20px; width: auto; }
     .navbar_right button{
         padding: 8px 25px;
         font-size: 15px;
@@ -88,12 +95,7 @@
         gap:15px;
         font-size: 17px;
     }
-    .navbar_right {
-        gap:20px
-    }
-    .navbar_right{
-        width: 20px;
-    }
+    .navbar_right { gap:20px; width: auto; }
     .navbar_right button{
         padding: 8px 25px;
         font-size: 15px;

@@ -2,14 +2,15 @@
     margin-top: 30px;
 }
 .food-display h2{
-    font-size: max(2vw,4vw);
+    font-size: clamp(22px, 3.2vw, 32px);
     font-weight: 600;
+    margin-bottom: 18px;
 }
 .food-display-list{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
-    gap:30px;
-    row-gap:50px;
+    gap:24px;
+    row-gap:36px;
 }
 food-item-image-rating{
     display: flex;
@@ -20,4 +21,11 @@ food-item-image-rating{
 .food-item-name-rating p{
     font-size: 20px;
     font-weight: 500;
+}
+
+@media (max-width: 768px){
+    .food-display-list{
+        gap:18px;
+        row-gap:28px;
+    }
 }

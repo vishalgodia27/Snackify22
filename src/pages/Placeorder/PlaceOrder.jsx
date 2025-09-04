@@ -36,6 +36,7 @@ function PlaceOrder() {
   const deliveryFee = 2
   const subtotal = getTotalCartAmount()
   const total = subtotal + deliveryFee
+  const formatCurrency = (value) => Number(value || 0).toFixed(2)
 
   return (
     <form className='place-order' onSubmit={handleSubmit}>
@@ -117,10 +118,10 @@ function PlaceOrder() {
         <div className='cart-total'>
           <h2>Cart Totals</h2>
           <div className='cart-total-details'>
-            <p>Subtotal: <span>${subtotal}</span></p>
-            <p>Delivery Fee: <span>${deliveryFee}</span></p>
+            <p>Subtotal: <span>${formatCurrency(subtotal)}</span></p>
+            <p>Delivery Fee: <span>${formatCurrency(deliveryFee)}</span></p>
             <hr />
-            <p><b>Total: <span>${total}</span></b></p>
+            <p><b>Total: <span>${formatCurrency(total)}</span></b></p>
           </div>
           <button type='submit'>Place Order</button>
         </div>
